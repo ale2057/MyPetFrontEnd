@@ -1,0 +1,21 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$bjorn-font-family: "Source Serif Pro" !default;
+
+$my-primary: mat.define-palette(mat.$cyan-palette, 800); //#00838F
+$my-accent: mat.define-palette(mat.$amber-palette, 800); //#FF8F00
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($my-theme);
