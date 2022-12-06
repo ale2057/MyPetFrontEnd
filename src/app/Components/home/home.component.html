@@ -1,0 +1,41 @@
+<mat-grid-list cols="4" rowHeight="200px">
+  <mat-grid-tile [colspan]="4" [rowspan]="1" class="filter-panel">
+    <mat-form-field appearance="fill">
+      <mat-label class="font1">Ciudad</mat-label>
+      <mat-select matNativeControl>
+        <mat-option value="Cochabamba"> Cochabamba </mat-option>
+        <mat-option value="La Paz"> La Paz </mat-option>
+        <mat-option value="Santa Cruz"> Santa Cruz </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="font1">Tipo de Mascota</mat-label>
+      <mat-select matNativeControl>
+        <mat-option value="Perro"> Perro </mat-option>
+        <mat-option value="Gato"> Gato </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="font1">Tamaño</mat-label>
+      <mat-select matNativeControl>
+        <mat-option value="Pequeño"> Pequeño </mat-option>
+        <mat-option value="Mediano"> Mediano </mat-option>
+        <mat-option value="Grande"> Grande </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="font1">Sexo</mat-label>
+      <mat-select matNativeControl>
+        <mat-option value="Hembra"> Hembra </mat-option>
+        <mat-option value="Macho"> Macho </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">
+      <div class="font1">Primary</div>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>

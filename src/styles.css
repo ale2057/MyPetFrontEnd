@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --secundary-bg-color: #e0e0e0;
+  --primary-bg-color: #00838f;
+  --accent-bg-color: #ff8f00;
 }
 
 html,

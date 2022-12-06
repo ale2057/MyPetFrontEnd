@@ -1,6 +1,5 @@
 .topbar {
   display: flex;
-  background-color: var(--main-bg-color);
   height: 55px;
   padding: 0 15px;
   justify-content: space-between;
@@ -11,77 +10,7 @@
   align-items: center;
 }
 
-.topbar a {
-  color: var(--main-text-color);
-  display: flex;
-  align-items: center;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  border: none;
-  outline: none;
-}
-
-a img {
-  height: 23px;
-  width: auto;
-}
-
 .rigth-section-topbar {
   display: flex;
   align-items: center;
-}
-
-.btn {
-  background: none;
-  border: 0;
-  border: solid white 1px;
-  position: relative;
-}
-.btn::before,
-.btn::after {
-  box-sizing: inherit;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.btn-virtual-class {
-  background-color: transparent;
-  color: var(--main-text-color);
-  border-radius: 4px;
-  font-size: 1.4em;
-  cursor: pointer;
-}
-
-.btn-border:hover {
-  color: wheat;
-}
-.btn-border::before,
-.btn-border::after {
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform-origin: center;
-}
-.btn-border::before {
-  border-top: 2px solid wheat;
-  border-bottom: 2px solid wheat;
-  transform: scale3d(0, 1, 1);
-}
-.btn-border::after {
-  border-left: 2px solid wheat;
-  border-right: 2px solid wheat;
-  transform: scale3d(1, 0, 1);
-}
-.btn-border:hover::before,
-.btn-border:hover::after {
-  transform: scale3d(1, 1, 1);
-  transition: transform 0.5s;
-}
-
-.btn-icon {
-  font-size: 15px;
 }
