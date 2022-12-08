@@ -1,6 +1,13 @@
-<mat-grid-list cols="4" rowHeight="200px">
-  <mat-grid-tile [colspan]="4" [rowspan]="1" class="filter-panel">
-    <mat-form-field appearance="fill">
+<!--Filter area to search-->
+<div class="panel-style">
+  <div class="panel-title font1">
+    Encuentra al nuevo integrante de tu familia
+  </div>
+  <div class="panel-subtitle font1">
+    Adoptar es brindar una nueva oportunidad
+  </div>
+  <div class="element-area">
+    <mat-form-field appearance="fill" class="combo-style">
       <mat-label class="font1">Ciudad</mat-label>
       <mat-select matNativeControl>
         <mat-option value="Cochabamba"> Cochabamba </mat-option>
@@ -9,7 +16,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="combo-style">
       <mat-label class="font1">Tipo de Mascota</mat-label>
       <mat-select matNativeControl>
         <mat-option value="Perro"> Perro </mat-option>
@@ -17,7 +24,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="combo-style">
       <mat-label class="font1">Tamaño</mat-label>
       <mat-select matNativeControl>
         <mat-option value="Pequeño"> Pequeño </mat-option>
@@ -26,7 +33,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="combo-style">
       <mat-label class="font1">Sexo</mat-label>
       <mat-select matNativeControl>
         <mat-option value="Hembra"> Hembra </mat-option>
@@ -34,8 +41,31 @@
       </mat-select>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">
-      <div class="font1">Primary</div>
+    <button mat-raised-button color="primary" style="padding: 20px">
+      <span class="font1">BUSCAR </span>
+      <mat-icon style="vertical-align: middle">search</mat-icon>
     </button>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
+<!--Cards view area-->
+<div style="display: flex; width: 100%; justify-content: center">
+  <div class="content-home-view">
+    <div class="pet-card">
+      <div class="blog-card spring-fever">
+        <div class="title-content">
+          <h3><a href="#" class="font1">Nombre Mascota</a></h3>
+        </div>
+        <div class="card-info font1">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim...
+          <a href="#"> Ver más </a>
+        </div>
+        <div class="gradient-overlay"></div>
+        <div class="color-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /.blog-card -->
+</div>
