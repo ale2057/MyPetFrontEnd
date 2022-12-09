@@ -7,58 +7,65 @@
     Adoptar es brindar una nueva oportunidad
   </div>
   <div class="element-area">
-    <mat-form-field appearance="fill" class="combo-style">
-      <mat-label class="font1">Ciudad</mat-label>
-      <mat-select matNativeControl>
-        <mat-option value="Cochabamba"> Cochabamba </mat-option>
-        <mat-option value="La Paz"> La Paz </mat-option>
-        <mat-option value="Santa Cruz"> Santa Cruz </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <form novalidate [formGroup]="filterFormG">
+      <mat-form-field appearance="fill" class="combo-style">
+        <mat-label class="font1">Ciudad</mat-label>
+        <mat-select formControlName="city" matNativeControl>
+          <mat-option value="Cochabamba"> Cochabamba </mat-option>
+          <mat-option value="La Paz"> La Paz </mat-option>
+          <mat-option value="Santa Cruz"> Santa Cruz </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill" class="combo-style">
-      <mat-label class="font1">Tipo de Mascota</mat-label>
-      <mat-select matNativeControl>
-        <mat-option value="Perro"> Perro </mat-option>
-        <mat-option value="Gato"> Gato </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field appearance="fill" class="combo-style">
+        <mat-label class="font1">Tipo de Mascota</mat-label>
+        <mat-select formControlName="type" matNativeControl>
+          <mat-option value="perro"> Perro </mat-option>
+          <mat-option value="gato"> Gato </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill" class="combo-style">
-      <mat-label class="font1">Tamaño</mat-label>
-      <mat-select matNativeControl>
-        <mat-option value="Pequeño"> Pequeño </mat-option>
-        <mat-option value="Mediano"> Mediano </mat-option>
-        <mat-option value="Grande"> Grande </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field appearance="fill" class="combo-style">
+        <mat-label class="font1">Tamaño</mat-label>
+        <mat-select formControlName="size" matNativeControl>
+          <mat-option value="pequeño"> Pequeño </mat-option>
+          <mat-option value="mediano"> Mediano </mat-option>
+          <mat-option value="grande"> Grande </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill" class="combo-style">
-      <mat-label class="font1">Sexo</mat-label>
-      <mat-select matNativeControl>
-        <mat-option value="Hembra"> Hembra </mat-option>
-        <mat-option value="Macho"> Macho </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field appearance="fill" class="combo-style">
+        <mat-label class="font1">Sexo</mat-label>
+        <mat-select formControlName="gender" matNativeControl>
+          <mat-option value="hembra"> Hembra </mat-option>
+          <mat-option value="macho"> Macho </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <button mat-raised-button color="primary" style="padding: 20px">
-      <span class="font1">BUSCAR </span>
-      <mat-icon style="vertical-align: middle">search</mat-icon>
-    </button>
+      <button
+        mat-raised-button
+        color="primary"
+        style="padding: 20px"
+        (click)="filter()"
+      >
+        <span class="font1">BUSCAR </span>
+        <mat-icon style="vertical-align: middle">search</mat-icon>
+      </button>
+    </form>
   </div>
 </div>
 <!--Cards view area-->
 <div style="display: flex; width: 100%; justify-content: center">
   <div class="content-home-view">
-    <div class="pet-card">
+    <div class="pet-card" *ngFor="let pet of pets">
       <div class="blog-card spring-fever">
         <div class="title-content">
-          <h3><a href="#" class="font1">Nombre Mascota</a></h3>
+          <h3>
+            <a href="#" class="font1">{{ pet.name }}</a>
+          </h3>
         </div>
         <div class="card-info font1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim...
+          {{ pet.story }}
           <a href="#"> Ver más </a>
         </div>
         <div class="gradient-overlay"></div>
