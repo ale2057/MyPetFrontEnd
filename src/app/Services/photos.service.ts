@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class PetsService {
+export class PhotosService {
   private _refres$ = new Subject<void>();
 
   constructor(private http: HttpClient) {}
@@ -15,7 +15,11 @@ export class PetsService {
     return this._refres$;
   }
 
-  getPets(): Observable<any> {
-    return this.http.get('https://localhost:7191/api/pet/allPets');
+  getPhotoPetById(id: number): Observable<any> {
+    return this.http.get('https://localhost:7191/api/photos/onePhotos/' + id);
+  }
+
+  getPhotosPets(): Observable<any> {
+    return this.http.get('https://localhost:7191/api/photos/allPhotos');
   }
 }

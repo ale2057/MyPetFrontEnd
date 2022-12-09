@@ -7,6 +7,17 @@
   align-content: center;
 }
 
+.page-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-area ::ng-deep .ngx-pagination .current {
+  background: var(--primary-bg-color);
+}
+
 .combo-style {
   margin-top: 15px;
   margin-left: 10px;
@@ -57,7 +68,6 @@
 }
 
 .pet-card {
-  background-color: var(--secundary-bg-color);
   width: 380px;
   height: 430px;
   justify-self: center;
@@ -79,7 +89,7 @@
 
 /*card*/
 
-.blog-card {
+.pet-card-container {
   max-width: 380px;
   width: 380px;
   height: 430px;
@@ -93,15 +103,13 @@
   box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
   text-align: center;
   transition: all 0.4s;
-  background: url(https://static.dw.com/image/15885952_303.jpg) center no-repeat;
-  background-size: cover;
 }
-.blog-card a {
+.pet-card-container a {
   color: #fff;
   text-decoration: none;
   transition: all 0.2s;
 }
-.blog-card .color-overlay {
+.pet-card-container .color-overlay {
   width: 550px;
   height: 500px;
   position: absolute;
@@ -110,7 +118,7 @@
   left: 0;
   transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
 }
-.blog-card .gradient-overlay {
+.pet-card-container .gradient-overlay {
   background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 21%);
   width: 550px;
   height: 500px;
@@ -119,17 +127,17 @@
   left: 0;
   z-index: 15;
 }
-.blog-card:hover {
+.pet-card-container:hover {
   box-shadow: 0px 18px 20px -9px rgba(0, 10, 30, 0.75);
 }
-.blog-card:hover .card-info {
+.pet-card-container:hover .card-info {
   opacity: 1;
   bottom: 100px;
 }
-.blog-card:hover .color-overlay {
+.pet-card-container:hover .color-overlay {
   background: rgba(0, 131, 143, 0.699);
 }
-.blog-card:hover .title-content {
+.pet-card-container:hover .title-content {
   margin-top: 70px;
 }
 .title-content {
@@ -143,12 +151,12 @@
   transition: all 0.6s;
 }
 
-.blog-card:hover h3:after {
+.pet-card-container:hover h3:after {
   animation: changeLetter 0.3s 1 linear;
   width: 80%;
 }
 
-.blog-card h3,
+.pet-card-container h3,
 h1 {
   font-size: 1.9em;
   font-weight: 400;
@@ -156,11 +164,11 @@ h1 {
   margin-bottom: 0;
   display: inline-block;
 }
-.blog-card h3 a {
+.pet-card-container h3 a {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
 }
-.blog-card h3 a:hover {
+.pet-card-container h3 a:hover {
   text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.95);
 }
 h3:after {
@@ -217,23 +225,21 @@ h3:after {
   opacity: 1;
 }
 
-.licon {
-  position: relative;
-  width: 23px;
-  height: 15px;
-  display: inline-block;
-  vertical-align: middle;
+.pet-photo {
+  width: 380px;
+  height: 430px;
+  background: #ccc;
+  overflow: hidden;
 }
-.licon:before {
-  content: "";
-  background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg?) -2px -6px
-    no-repeat;
-  background-size: 250px;
-  width: 26px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  top: -3px;
-  left: 0;
+
+.pet-photo img {
+  width: 100%;
+  height: auto;
+}
+@supports (object-fit: cover) {
+  .pet-photo img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
 }

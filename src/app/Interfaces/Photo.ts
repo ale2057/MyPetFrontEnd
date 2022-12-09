@@ -1,5 +1,5 @@
-export interface Photo{
-  id?:number;
-  petPhoto:string;
-  petId:number;
+export interface Photo {
+  photoId: number;
+  petPhoto: string;
+  petId: number;
 }

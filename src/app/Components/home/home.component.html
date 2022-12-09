@@ -57,11 +57,21 @@
 <!--Cards view area-->
 <div style="display: flex; width: 100%; justify-content: center">
   <div class="content-home-view">
-    <div class="pet-card" *ngFor="let pet of pets">
-      <div class="blog-card spring-fever">
+    <div
+      class="pet-card"
+      *ngFor="
+        let pet of pets | paginate : { itemsPerPage: 6, currentPage: pages }
+      "
+    >
+      <div class="pet-card-container spring-fever">
+        <div class="pet-photo">
+          <img src="./assets/photos/{{ this.searchPhoto(pet.petId) }}" />
+        </div>
         <div class="title-content">
           <h3>
-            <a href="#" class="font1">{{ pet.name }}</a>
+            <a href="#" class="font1" style="font-weight: bold">{{
+              pet.name
+            }}</a>
           </h3>
         </div>
         <div class="card-info font1">
@@ -73,6 +83,11 @@
       </div>
     </div>
   </div>
-
-  <!-- /.blog-card -->
+</div>
+<div class="page-area">
+  <pagination-controls
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+    (pageChange)="pages = $event"
+  ></pagination-controls>
 </div>
