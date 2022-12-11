@@ -7,7 +7,7 @@
     Adoptar es brindar una nueva oportunidad
   </div>
   <div class="element-area">
-    <form novalidate [formGroup]="filterFormG">
+    <form class="form-area" novalidate [formGroup]="filterFormG">
       <mat-form-field appearance="fill" class="combo-style">
         <mat-label class="font1">Ciudad</mat-label>
         <mat-select formControlName="city" matNativeControl>
@@ -76,7 +76,7 @@
         </div>
         <div class="card-info font1">
           {{ pet.story }}
-          <a href="#"> Ver más </a>
+          <a [routerLink]="['/ficha-mascota', pet.petId]"> Ver más </a>
         </div>
         <div class="gradient-overlay"></div>
         <div class="color-overlay"></div>
@@ -89,5 +89,6 @@
     previousLabel="Anterior"
     nextLabel="Siguiente"
     (pageChange)="pages = $event"
+    class="font1"
   ></pagination-controls>
 </div>

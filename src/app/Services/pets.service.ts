@@ -18,4 +18,8 @@ export class PetsService {
   getPets(): Observable<any> {
     return this.http.get('https://localhost:7191/api/pet/allPets');
   }
+
+  getOnePet(id: number): Observable<any> {
+    return this.http.get('https://localhost:7191/api/pet/onePet/' + id);
+  }
 }

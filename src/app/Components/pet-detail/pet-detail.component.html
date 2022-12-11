@@ -1,0 +1,37 @@
+<div class="panel-style">
+  <div class="panel-title font1">Información de la mascota</div>
+</div>
+
+<div class="detail-area">
+  <div class="photo-area">
+    <div class="pet-photo">
+      <img src="./assets/photos/{{ this.photo.petPhoto }}" />
+    </div>
+  </div>
+  <div class="view-area">
+    <div>
+      <h1>{{ this.pet.name }}</h1>
+      <h2>
+        <mat-icon color="accent">pets</mat-icon>
+        &nbsp;{{ this.pet.breed }}
+      </h2>
+      <h2>
+        <mat-icon color="accent"> location_on</mat-icon> &nbsp;{{
+          this.pet.city
+        }}
+      </h2>
+      <h2>
+        <mat-icon color="accent">straighten</mat-icon> &nbsp;{{ this.pet.size }}
+      </h2>
+      <h2>
+        <mat-icon svgIcon="maleFemale" color="accent"></mat-icon>
+        &nbsp;{{ this.pet.gender }}
+      </h2>
+      <h2>
+        <mat-icon color="accent"> local_hospital</mat-icon>
+        &nbsp;{{ this.pet.health }}
+      </h2>
+      <h2>&nbsp;{{ this.pet.story }}</h2>
+    </div>
+  </div>
+</div>
