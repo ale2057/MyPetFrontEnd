@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private petsService: PetsService,
     private photosService: PhotosService
   ) {}
+
   ngOnDestroy(): void {
     this.suscription.unsubscribe();
   }

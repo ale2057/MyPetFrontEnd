@@ -21,6 +21,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 //Services
 import { HttpClientModule } from '@angular/common/http';
 import { PetDetailComponent } from './Components/pet-detail/pet-detail.component';
+import { PetAdminComponent } from './Components/pet-admin/pet-admin.component';
+import { AcceptDialogComponent } from './Components/accept-dialog/accept-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { PetDetailComponent } from './Components/pet-detail/pet-detail.component
     HeaderComponent,
     HomeComponent,
     PetDetailComponent,
+    PetAdminComponent,
+    AcceptDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,8 @@
-.topbar {
-  display: flex;
-  height: 55px;
-  padding: 0 15px;
-  justify-content: space-between;
+.example-spacer {
+  flex: 1 1 auto;
 }
-
-.left-section-topbar {
-  display: flex;
-  align-items: center;
-}
-
-.rigth-section-topbar {
-  display: flex;
-  align-items: center;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
 }

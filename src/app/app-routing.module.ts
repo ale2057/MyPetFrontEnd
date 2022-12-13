@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Components/home/home.component';
+import { PetAdminComponent } from './Components/pet-admin/pet-admin.component';
 import { PetDetailComponent } from './Components/pet-detail/pet-detail.component';
 
 const routes: Routes = [
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'ficha-mascota/:petId',
     component: PetDetailComponent,
+  },
+  {
+    path: 'administracion',
+    component: PetAdminComponent,
   },
   { path: '**', component: HomeComponent },
 ];

@@ -1,6 +1,7 @@
-<section class="topbar">
-  <div class="left-section-topbar">
-    <h1><div class="font1">MyPet</div></h1>
-  </div>
-  <div class="rigth-section-topbar"></div>
-</section>
+<mat-toolbar style="padding-top: 0px">
+  <a [routerLink]="['/home']"><span class="font1">MyPet</span></a>
+  <span class="example-spacer"></span>
+  <button mat-button [routerLink]="['/administracion']">
+    <b><div class="font1">Administrar</div></b>
+  </button>
+</mat-toolbar>

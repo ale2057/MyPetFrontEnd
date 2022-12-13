@@ -10,28 +10,36 @@
   </div>
   <div class="view-area">
     <div>
-      <h1>{{ this.pet.name }}</h1>
+      <h1>
+        <div class="font1">{{ this.pet.name }}</div>
+      </h1>
       <h2>
         <mat-icon color="accent">pets</mat-icon>
-        &nbsp;{{ this.pet.breed }}
+        &nbsp;
+        <div class="font1">{{ this.pet.breed }}</div>
       </h2>
       <h2>
-        <mat-icon color="accent"> location_on</mat-icon> &nbsp;{{
-          this.pet.city
-        }}
+        <mat-icon color="accent"> location_on</mat-icon> &nbsp;
+        <div class="font1">{{ this.pet.city }}</div>
       </h2>
       <h2>
-        <mat-icon color="accent">straighten</mat-icon> &nbsp;{{ this.pet.size }}
+        <mat-icon color="accent">straighten</mat-icon> &nbsp;
+        <div class="font1">{{ this.pet.size }}</div>
       </h2>
       <h2>
         <mat-icon svgIcon="maleFemale" color="accent"></mat-icon>
-        &nbsp;{{ this.pet.gender }}
+        &nbsp;
+        <div class="font1">{{ this.pet.gender }}</div>
       </h2>
       <h2>
         <mat-icon color="accent"> local_hospital</mat-icon>
-        &nbsp;{{ this.pet.health }}
+        &nbsp;
+        <div class="font1">{{ this.pet.health }}</div>
       </h2>
-      <h2>&nbsp;{{ this.pet.story }}</h2>
+      <h2>
+        &nbsp;
+        <div class="font1">{{ this.pet.story }}</div>
+      </h2>
     </div>
   </div>
 </div>

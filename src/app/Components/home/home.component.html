@@ -69,9 +69,12 @@
         </div>
         <div class="title-content">
           <h3>
-            <a href="#" class="font1" style="font-weight: bold">{{
-              pet.name
-            }}</a>
+            <a
+              [routerLink]="['/ficha-mascota', pet.petId]"
+              class="font1"
+              style="font-weight: bold"
+              >{{ pet.name }}</a
+            >
           </h3>
         </div>
         <div class="card-info font1">
