@@ -70,3 +70,7 @@ th {
   display: flex;
   flex-direction: row;
 }
+
+.head-table {
+  font-weight: 900;
+}

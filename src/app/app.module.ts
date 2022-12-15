@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PetDetailComponent } from './Components/pet-detail/pet-detail.component';
 import { PetAdminComponent } from './Components/pet-admin/pet-admin.component';
 import { AcceptDialogComponent } from './Components/accept-dialog/accept-dialog.component';
+import { AddPetDialogComponent } from './Components/add-pet-dialog/add-pet-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AcceptDialogComponent } from './Components/accept-dialog/accept-dialog.
     PetDetailComponent,
     PetAdminComponent,
     AcceptDialogComponent,
+    AddPetDialogComponent,
   ],
   imports: [
     BrowserModule,

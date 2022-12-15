@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 import { Pet } from 'src/app/Interfaces/Pet';
 import { PetsService } from 'src/app/Services/pets.service';
 import { AcceptDialogComponent } from '../accept-dialog/accept-dialog.component';
+import { AddPetDialogComponent } from '../add-pet-dialog/add-pet-dialog.component';
 @Component({
   selector: 'app-pet-admin',
   templateUrl: './pet-admin.component.html',
@@ -66,7 +67,7 @@ export class PetAdminComponent implements AfterViewInit, OnInit, OnDestroy {
     const dialogRef = this.dialog.open(AcceptDialogComponent, {
       width: '400px',
       data: {
-        title: 'Eliminacion de resgitro',
+        title: 'Eliminacion de registro',
         question: 'Esta seguro de eliminar el registro?',
         cancelButonTitle: 'Cancelar',
         acceptButonAction: 'Eliminar',
@@ -94,8 +95,29 @@ export class PetAdminComponent implements AfterViewInit, OnInit, OnDestroy {
         });
       }
     });
-    /*
-     */
+  }
+
+  addPetDialog() {
+    const dialogRef = this.dialog.open(AddPetDialogComponent, {
+      width: '500px',
+      data: {
+        title: 'Registrar nueva mascota',
+        cancelButonTitle: 'Cancelar',
+        acceptButonAction: 'Aceptar',
+      },
+    });
+  }
+
+  updatePetDialog(petD: Pet) {
+    const dialogRef = this.dialog.open(AddPetDialogComponent, {
+      width: '500px',
+      data: {
+        title: 'Actualizar datos de mascota',
+        cancelButonTitle: 'Cancelar',
+        acceptButonAction: 'Actualizar',
+        petData: petD,
+      },
+    });
   }
 
   ngAfterViewInit() {

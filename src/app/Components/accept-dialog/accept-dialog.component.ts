@@ -17,11 +17,7 @@ export class AcceptDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<AcceptDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {
-    setTimeout(() => {
-      document.getElementById('data-question-alert')!.innerHTML = data.question;
-    }, 50);
-  }
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();

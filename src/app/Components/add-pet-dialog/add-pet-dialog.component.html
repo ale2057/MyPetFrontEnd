@@ -1,0 +1,159 @@
+<h1 mat-dialog-title>
+  <div class="font1">{{ data.title }}</div>
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addPetForm">
+    <div class="input-area">
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Nombre de mascota</mat-label>
+          <input
+            matInput
+            class="font1"
+            id="name"
+            formControlName="name"
+            required="true"
+            minlength="5"
+          />
+        </mat-form-field>
+      </section>
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Raza</mat-label>
+          <input
+            matInput
+            class="font1"
+            id="breed"
+            formControlName="breed"
+            required="true"
+            minlength="5"
+          />
+        </mat-form-field>
+      </section>
+    </div>
+
+    <div class="input-area">
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Sexo</mat-label>
+          <mat-select id="gender" formControlName="gender" required="true">
+            <mat-option value="Macho">Macho</mat-option>
+            <mat-option value="Hembra">Hembra</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Tipo</mat-label>
+          <mat-select id="family" formControlName="family" required="true">
+            <mat-option value="Gato">Gato</mat-option>
+            <mat-option value="Perro">Perro</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+    </div>
+
+    <div class="input-area">
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Tamaño</mat-label>
+          <mat-select id="size" formControlName="size" required="true">
+            <mat-option value="Grande">Grande</mat-option>
+            <mat-option value="Mediano">Mediano</mat-option>
+            <mat-option value="Pequeño">Pequeño</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Ciudad</mat-label>
+          <mat-select id="city" formControlName="city" required="true">
+            <mat-option value="La Paz">La Paz</mat-option>
+            <mat-option value="Cochabamba">Cochabamba</mat-option>
+            <mat-option value="Santa Cruz">Santa Cruz</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+    </div>
+
+    <div class="input-area">
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Personalidad</mat-label>
+          <textarea
+            matInput
+            #inputHealth
+            maxlength="200"
+            minlength="5"
+            class="font1"
+            id="personality"
+            formControlName="personality"
+            required="true"
+          ></textarea>
+          <mat-hint align="end">{{ inputHealth.value.length }}/200</mat-hint>
+        </mat-form-field>
+      </section>
+      <section>
+        <mat-form-field appearance="outline">
+          <mat-label class="font1">Salud</mat-label>
+          <textarea
+            matInput
+            #inputHealth
+            maxlength="200"
+            minlength="5"
+            class="font1"
+            id="health"
+            formControlName="health"
+            required="true"
+          ></textarea>
+          <mat-hint align="end">{{ inputHealth.value.length }}/200</mat-hint>
+        </mat-form-field>
+      </section>
+    </div>
+
+    <div class="input-area">
+      <mat-form-field appearance="outline">
+        <mat-label class="font1">Historia</mat-label>
+        <textarea
+          matInput
+          #inputHealth
+          maxlength="200"
+          minlength="5"
+          class="font1"
+          id="story"
+          formControlName="story"
+          required="true"
+        ></textarea>
+        <mat-hint align="end">{{ inputHealth.value.length }}/200</mat-hint>
+      </mat-form-field>
+    </div>
+  </form>
+  <div *ngIf="this.flag">
+    *Todos los campos deben estar llenados. <br />
+    *Cada campo debe tener un minimo de 5 caracteres.
+  </div>
+</div>
+<div mat-dialog-actions align="center">
+  <button
+    *ngIf="this.opFlag"
+    mat-button
+    color="primary"
+    (click)="this.onSubmit(addPetForm.value)"
+    cdkFocusInitial
+  >
+    <div class="font1">{{ data.acceptButonAction || "Aceptar" }}</div>
+  </button>
+
+  <button
+    *ngIf="!this.opFlag"
+    mat-button
+    color="primary"
+    (click)="this.updatePetData(addPetForm.value)"
+    cdkFocusInitial
+  >
+    <div class="font1">{{ data.acceptButonAction || "Actualizar" }}</div>
+  </button>
+  <button mat-button color="warn" (click)="this.onNoClick()">
+    <div class="font1">{{ data.cancelButonTitle || "Cancelar" }}</div>
+  </button>
+</div>

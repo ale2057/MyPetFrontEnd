@@ -1,0 +1,11 @@
+.input-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.input-area section {
+  margin-left: 5px;
+  margin-right: 5px;
+}
