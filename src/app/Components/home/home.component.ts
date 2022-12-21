@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   searchPhoto(photoId: number) {
-    let namePh: string = '';
+    let namePh: string = 'imageDefault.jpg';
     this.photos.filter((pht: Photo) => {
       if (pht.petId === photoId) {
         namePh = pht.petPhoto;
