@@ -16,12 +16,15 @@ pipeline{
       steps{
         git branch: 'main', url: 'https://github.com/ale2057/MyPetFrontEnd.git'
         //sh 'npm install'
-        if (isUnix()){
-          sh 'npm install'
+        script {
+          if (isUnix()){
+            sh 'npm install'
           }
-        else{
-          bat 'npm install'
+          else{
+            bat 'npm install'
           }
+        }
+
         dir('/src') {
           // some block
         }
