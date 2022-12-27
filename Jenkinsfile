@@ -14,7 +14,8 @@ pipeline{
   stages{
     stage('install'){
       steps{
-
+        git branch: 'main', url: 'https://github.com/ale2057/MyPetFrontEnd.git'
+        sh 'npm install'
       }
     }
   }
