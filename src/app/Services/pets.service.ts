@@ -17,16 +17,16 @@ export class PetsService {
   }
 
   getPets(): Observable<any> {
-    return this.http.get('https://localhost:7191/api/pet/allPets');
+    return this.http.get('https://mypetservice.azurewebsites.net/api/pet/allPets');
   }
 
   getOnePet(id: number): Observable<any> {
-    return this.http.get('https://localhost:7191/api/pet/onePet/' + id);
+    return this.http.get('https://mypetservice.azurewebsites.net/api/pet/onePet/' + id);
   }
 
   deleteOnePet(id: number): Observable<any> {
     return this.http
-      .delete('https://localhost:7191/api/pet/deletePet/' + id)
+      .delete('https://mypetservice.azurewebsites.net/api/pet/deletePet/' + id)
       .pipe(
         tap(() => {
           this._refres$.next();
@@ -35,7 +35,7 @@ export class PetsService {
   }
 
   addPet(pet: Pet): Observable<any> {
-    return this.http.post('https://localhost:7191/api/pet/addPet', pet).pipe(
+    return this.http.post('https://mypetservice.azurewebsites.net/api/pet/addPet', pet).pipe(
       tap(() => {
         this._refres$.next();
       }),
@@ -45,7 +45,7 @@ export class PetsService {
 
   updatePet(pet: Pet, id: number): Observable<any> {
     return this.http
-      .put('https://localhost:7191/api/pet/updatePet/' + id, pet)
+      .put('https://mypetservice.azurewebsites.net/api/pet/updatePet/' + id, pet)
       .pipe(
         tap(() => {
           this._refres$.next();
