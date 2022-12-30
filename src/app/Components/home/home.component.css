@@ -259,3 +259,8 @@ h3:after {
     width: 95%;
   }
 }
+
+.not-found-message{
+  font-size: 18px; 
+  background-color: #f7efac; 
+}

@@ -57,6 +57,10 @@
 <!--Cards view area-->
 <div style="display: flex; width: 100%; justify-content: center">
   <div class="content-home-view">
+    <div class= "not-found-message font1" *ngIf="pets.length==0">
+      <mat-icon style="color:#b7a505; ">warning</mat-icon> 
+      <label>   La búsqueda no ha devuelto ningún resultado.</label>
+     </div>
     <div
       class="pet-card"
       *ngFor="
