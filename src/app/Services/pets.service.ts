@@ -3,11 +3,15 @@ import { HttpClient } from '@angular/common/http';
 //update data real time
 import { catchError, Observable, of, Subject, tap } from 'rxjs';
 import { Pet } from '../Interfaces/Pet';
+//environment
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PetsService {
+  serv = environment.server;
+
   private _refres$ = new Subject<void>();
 
   constructor(private http: HttpClient) {}
@@ -17,16 +21,16 @@ export class PetsService {
   }
 
   getPets(): Observable<any> {
-    return this.http.get('https://mypetservice.azurewebsites.net/api/pet/allPets');
+    return this.http.get(`${this.serv}/pet/allPets`);
   }
 
   getOnePet(id: number): Observable<any> {
-    return this.http.get('https://mypetservice.azurewebsites.net/api/pet/onePet/' + id);
+    return this.http.get(`${this.serv}/pet/onePet/${id}`);
   }
 
   deleteOnePet(id: number): Observable<any> {
     return this.http
-      .delete('https://mypetservice.azurewebsites.net/api/pet/deletePet/' + id)
+      .delete(`${this.serv}/pet/deletePet/${id}`)
       .pipe(
         tap(() => {
           this._refres$.next();
@@ -35,7 +39,7 @@ export class PetsService {
   }
 
   addPet(pet: Pet): Observable<any> {
-    return this.http.post('https://mypetservice.azurewebsites.net/api/pet/addPet', pet).pipe(
+    return this.http.post(`${this.serv}/pet/addPet`, pet).pipe(
       tap(() => {
         this._refres$.next();
       }),
@@ -45,7 +49,7 @@ export class PetsService {
 
   updatePet(pet: Pet, id: number): Observable<any> {
     return this.http
-      .put('https://mypetservice.azurewebsites.net/api/pet/updatePet/' + id, pet)
+      .put(`${this.serv}/pet/updatePet/${id}`, pet)
       .pipe(
         tap(() => {
           this._refres$.next();
